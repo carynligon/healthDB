@@ -3,9 +3,14 @@
   height: 100vh;
   background: $darkGray;
   color: $white;
+  float: left;
   ul {
     padding: 0;
     margin: 0;
+    a {
+      color: $white;
+      text-decoration: none;
+    }
     li {
       list-style-type: none;
       text-align: center;

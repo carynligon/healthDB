@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router';
 
 export default React.createClass({
   render() {
@@ -9,7 +10,7 @@ export default React.createClass({
         <p>User Whoever</p>
       </div>
       <ul className="panel-navigation">
-        <li className="water-li">Water</li>
+        <Link to="/water"><li className="water-li">Water</li></Link>
         <li className="food-li">Food</li>
         <li className="sleep-li">Sleep</li>
         <li className="exercise-li">Exercise</li>

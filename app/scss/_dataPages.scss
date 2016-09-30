@@ -1,0 +1,19 @@
+.page-wrapper {
+  margin-left: 250px;
+  background: $lightGray;
+  header {
+    padding: 4rem 2rem;
+    background: $white;
+    box-shadow: 1px 1px 2px rgba($darkGray, 0.3);
+    h2 {
+      margin: 0;
+      font-size: 2rem;
+      color: $blue;
+    }
+  }
+  &::after {
+    content: '';
+    clear: both;
+    display: block;
+  }
+}

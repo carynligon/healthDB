@@ -1,6 +1,13 @@
+@import 'https://fonts.googleapis.com/css?family=Hind|Noto+Serif';
 @import 'variables';
 @import 'sidebar';
+@import 'dataPages';
 
 body {
   margin: 0;
+  font-family: 'Noto Serif';
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Hind', sans-serif;
 }
