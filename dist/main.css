@@ -1,3 +1,49 @@
+.side-panel {
+  width: 250px;
+  height: 100vh;
+  background: #3a3a3d;
+  color: #fff; }
+  .side-panel ul {
+    padding: 0;
+    margin: 0; }
+    .side-panel ul li {
+      list-style-type: none;
+      text-align: center;
+      padding: 3rem 0;
+      border-top: 1px solid #46464a; }
+      .side-panel ul li:first-child {
+        border: none; }
+      .side-panel ul li:hover {
+        cursor: pointer; }
+    .side-panel ul .water-li:hover {
+      background: #00A1E4; }
+    .side-panel ul .food-li:hover {
+      background: #04E762; }
+    .side-panel ul .sleep-li:hover {
+      background: #F5B700; }
+    .side-panel ul .exercise-li:hover {
+      background: #DC0073; }
+  .side-panel .user-sidebar {
+    text-align: center;
+    padding: 10px 0; }
+    .side-panel .user-sidebar .user-icon {
+      font-size: 2.5rem;
+      margin: 10px;
+      text-align: center;
+      display: inline-block; }
+      .side-panel .user-sidebar .user-icon i {
+        border-radius: 50%;
+        color: #3a3a3d;
+        background: #fff;
+        padding: 0.5rem 0.8rem; }
+    .side-panel .user-sidebar p {
+      margin: 0;
+      text-align: center;
+      display: inline-block;
+      position: relative;
+      bottom: 7px; }
 
+body {
+  margin: 0; }
 
 /*# sourceMappingURL=main.css.map */
