@@ -1,11 +1,32 @@
 import React from 'react';
-// import d3 from 'd3';
+import * as d3 from "d3";
+import createFragment from 'react-addons-create-fragment';
+import ReactFauxDOM from 'react-faux-dom';
 
 export default React.createClass({
+  mixins: [ReactFauxDOM.mixins.core, ReactFauxDOM.mixins.anim],
+  getInitialState() {
+    return {};
+  },
   render() {
-    console.log(d3);
+    console.log(ReactFauxDOM);
+    console.log(this);
+    console.log(this.state);
+
+    return (
+      <div className="chart-wrapper">
+        {this.state.chart}
+      </div>
+    )
+  },
+  componentDidMount() {
+    let faux = this.connectFauxDOM('div', 'chart');
+    console.log(faux);
+    let component = this;
     let width = 500;
     let height = 500;
+
+    let el = ReactFauxDOM.createElement('div')
 
     let widthScale = d3.scaleLinear()
       .domain([0, 80])
@@ -16,15 +37,16 @@ export default React.createClass({
         .range([0, width]);
 
     let color = d3.scaleLinear()
-      .domain([0, 60])
-      .range(['red', 'blue']);
+      .domain([0, 80])
+      .range(['white', '#00A1E4']);
 
     let axis = d3.axisBottom()
       .scale(widthScale)
       .ticks(5);
 
-    let canvas = d3.select('body')
+    let canvas = d3.select('faux')
         .append('svg')
+        .attr('class', 'water-bar')
         .attr('width', width)
         .attr('height', height);
 
@@ -40,7 +62,7 @@ export default React.createClass({
         .attr('width', 0)
         .attr('height', 50)
         .attr('fill', function(d) {
-          return color(d.age);
+          return color(d);
         })
         .attr('y', function(d,i) {
           return i * 67;
@@ -49,15 +71,7 @@ export default React.createClass({
     bars.transition()
       .duration(1500)
       .attr('width', function(d) {
-        console.log(d);
-        console.log(widthScale);
         return widthScale(d);
       });
-
-    return (
-      <div className="chart-wrapper">
-        {canvas}
-      </div>
-    )
   }
 })

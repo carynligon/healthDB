@@ -64,6 +64,12 @@
     clear: both;
     display: block; }
 
+.water-bar {
+  margin: 0 auto;
+  display: block;
+  padding-top: 2rem;
+  transform: rotate(-90deg); }
+
 body {
   margin: 0;
   font-family: 'Noto Serif'; }
