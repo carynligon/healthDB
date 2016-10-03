@@ -81,10 +81,15 @@ console.dir(d3.scaleOrdinal());
       .enter().append('rect')
         .attr('width', 20)
         .attr('height', 0)
+        .attr('x', function(d,i) {
+          return i * 67;
+        });
 
     rect.transition()
         .delay(function (d, i) { return i * 10 })
-        .attr('height', 20)
+        .attr('height', function(d) {
+          return d
+        })
 
     this.animateFauxDOM(800)
 
@@ -92,36 +97,6 @@ console.dir(d3.scaleOrdinal());
         .attr('class', 'x axis')
         .attr('transform', 'translate(0,' + height + ')')
         .call(xAxis)
-
-    this.transitionGrouped = function () {
-      y.domain([0, yGroupMax])
-
-      rect.transition()
-          .duration(500)
-          .delay(function (d, i) { return i * 10 })
-          .attr('x', function (d, i, j) { return x(d.x) + x.range() / n * j })
-          .attr('width', x.range() / n)
-        .transition()
-          .attr('y', function (d) { return y(d.y) })
-          .attr('height', function (d) { return height - y(d.y) })
-
-      component.animateFauxDOM(2000)
-    }
-
-    this.transitionStacked = function () {
-      y.domain([0, yStackMax])
-
-      rect.transition()
-          .duration(500)
-          .delay(function (d, i) { return i * 10 })
-          .attr('y', function (d) { return y(d.y0 + d.y) })
-          .attr('height', function (d) { return y(d.y0) - y(d.y0 + d.y) })
-        .transition()
-          .attr('x', function (d) { return x(d.x) })
-          .attr('width', x.range())
-
-      component.animateFauxDOM(2000)
-    }
 
     // Inspired by Lee Byron's test data generator.
     function bumpLayer (n, o) {

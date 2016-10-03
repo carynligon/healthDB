@@ -67,8 +67,7 @@
 .water-bar {
   margin: 0 auto;
   display: block;
-  padding-top: 2rem;
-  transform: rotate(-90deg); }
+  padding-top: 2rem; }
 
 body {
   margin: 0;
