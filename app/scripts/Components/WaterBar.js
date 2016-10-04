@@ -5,7 +5,6 @@ var d3 = require('d3');
 export default React.createClass({
   mixins: [Faux.mixins.core, Faux.mixins.anim],
   getInitialState: function () {
-    console.log(d3);
     return { look: 'stacked' }
   },
   render: function () {
@@ -15,13 +14,7 @@ export default React.createClass({
     </div>
   },
   componentDidMount: function () {
-    var faux = this.connectFauxDOM('div', 'chart')
-
-    var component = this;
-
-    let n = 4 // number of layers
-    let m = 58 // number of samples per layer
-    let stack = d3.stack();
+    let faux = this.connectFauxDOM('div', 'chart')
     let margin = {top: 40, right: 10, bottom: 20, left: 10};
     let width = 960 - margin.left - margin.right;
     let height = 350 - margin.top - margin.bottom;
@@ -44,7 +37,6 @@ export default React.createClass({
         .ticks(7)
         .tickPadding(6);
 
-    console.log(xAxis);
     let yAxis = d3.axisLeft()
         .scale(y)
         .tickSize(1)
