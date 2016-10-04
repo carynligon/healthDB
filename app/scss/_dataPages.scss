@@ -16,10 +16,16 @@
     clear: both;
     display: block;
   }
+  a {
+    text-decoration: none;
+    color: $darkGray;
+    position: relative;
+    bottom: 2rem;
+  }
 }
 
 .water-bar {
   margin: 0 auto;
   display: block;
-  padding-top: 2rem;
+  padding: 2rem;
 }

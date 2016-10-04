@@ -63,11 +63,16 @@
     content: '';
     clear: both;
     display: block; }
+  .page-wrapper a {
+    text-decoration: none;
+    color: #3A3A3D;
+    position: relative;
+    bottom: 2rem; }
 
 .water-bar {
   margin: 0 auto;
   display: block;
-  padding-top: 2rem; }
+  padding: 2rem; }
 
 body {
   margin: 0;
