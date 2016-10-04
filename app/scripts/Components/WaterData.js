@@ -76,14 +76,18 @@ console.dir(d3.scaleOrdinal());
           .attr('fill', function(d) {
             return color(d);
           })
+          .attr('transform', function(d) {
+            let moveY = height-heightScale(d);
+            return 'translate(0,' + moveY + ')';
+          })
           .attr('x', function(d,i) {
             return i * 67;
           });
 
     rect.transition()
         .delay(function (d, i) { return i * 10 })
+        .duration(500)
         .attr('height', function(d) {
-          console.log(d);
           return heightScale(d);
         });
 
