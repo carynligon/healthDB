@@ -68,11 +68,17 @@
     color: #3A3A3D;
     position: relative;
     bottom: 2rem; }
+    .page-wrapper a:hover {
+      color: #00A1E4; }
+  .page-wrapper h3 {
+    margin: 1rem;
+    text-align: center;
+    color: #00A1E4; }
 
 .water-bar {
   margin: 0 auto;
   display: block;
-  padding: 2rem; }
+  padding: 1rem; }
 
 body {
   margin: 0;

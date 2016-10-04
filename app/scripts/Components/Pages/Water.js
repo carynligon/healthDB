@@ -5,7 +5,7 @@ import Sidebar from '../Sidebar';
 import WaterData from '../WaterData';
 
 export default React.createClass({
-  data: [56, 75, 80, 46],
+  data: [56, 75, 80, 46, 26, 75, 21, 59],
   render() {
     return (
       <main>

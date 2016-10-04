@@ -21,11 +21,19 @@
     color: $darkGray;
     position: relative;
     bottom: 2rem;
+    &:hover {
+      color: $blue;
+    }
+  }
+  h3 {
+    margin: 1rem;
+    text-align: center;
+    color: $blue;
   }
 }
 
 .water-bar {
   margin: 0 auto;
   display: block;
-  padding: 2rem;
+  padding: 1rem;
 }
