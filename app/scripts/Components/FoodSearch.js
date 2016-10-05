@@ -9,7 +9,9 @@ export default React.createClass({
     return {};
   },
   selectItem(e) {
-    console.log(_.where(this.state.results, {_id: e.target.id}));
+    let item = (_.where(this.state.results, {_id: e.target.id}))[0];
+    console.log(item);
+    store.nutrients.newData(item.fields.nf_calories, item.fields.nf_total_fat, item._id);
   },
   performSearch(e) {
     e.preventDefault();

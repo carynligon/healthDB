@@ -39,6 +39,7 @@ const Session = Backbone.Model.extend({
       password: password
     }, {
       success: function(response) {
+        console.log(response);
         window.localStorage.setItem('authtoken', response.get('_kmd').authtoken);
         window.localStorage.setItem('username', response.get('username'));
         response.unset('password');

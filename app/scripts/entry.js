@@ -17,4 +17,11 @@ $(document).ajaxSend(function(evt, xhrAjax, jqueryAjax) {
   }
 });
 
-store.session.save({username: 'caryn', password: '1234'});
+store.session.save({username: 'caryn', password: '1234'},
+{
+  success:(data) =>
+  {
+    console.log(data);
+    localStorage.setItem('authtoken', data.get('authtoken'));
+  }
+});
