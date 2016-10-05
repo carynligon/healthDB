@@ -1,9 +1,15 @@
 import React from 'react';
 import $ from 'jquery';
+import _ from 'underscore';
+
+import store from '../store';
 
 export default React.createClass({
   getInitialState() {
     return {};
+  },
+  selectItem(e) {
+    console.log(_.where(this.state.results, {_id: e.target.id}));
   },
   performSearch(e) {
     e.preventDefault();
@@ -20,7 +26,7 @@ export default React.createClass({
     if (this.state.results) {
       results = this.state.results.map((result, i) => {
         return (
-          <li key={i}>
+          <li key={i} onClick={this.selectItem} id={result._id}>
             {result.fields.item_name}
           </li>
         )

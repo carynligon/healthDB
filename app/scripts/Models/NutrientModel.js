@@ -1,5 +1,9 @@
 import Backbone from 'backbone';
 
 export default Backbone.Model.extend({
-  urlRoot: ''
+  urlRoot: '',
+  idAttribute: '_id',
+  defaults: {
+    timestamp: new Date()
+  }
 });

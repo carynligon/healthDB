@@ -8,10 +8,12 @@ import settings from './settings';
 ReactDOM.render(router, document.getElementById('container'));
 
 $(document).ajaxSend(function(evt, xhrAjax, jqueryAjax) {
-  if (localStorage.getItem('authtoken')) {
-    xhrAjax.setRequestHeader('Authorization', 'Kinvey ' + localStorage.getItem('authtoken'));
-  } else {
-    xhrAjax.setRequestHeader('Authorization', 'Basic ' + settings.basicAuth);
+  if (jqueryAjax.url.indexOf('kinvey') !== -1) {
+    if (localStorage.getItem('authtoken')) {
+      xhrAjax.setRequestHeader('Authorization', 'Kinvey ' + localStorage.getItem('authtoken'));
+    } else {
+      xhrAjax.setRequestHeader('Authorization', 'Basic ' + settings.basicAuth);
+    }
   }
 });
 
