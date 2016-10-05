@@ -11,7 +11,7 @@ export default React.createClass({
       </div>
       <ul className="panel-navigation">
         <Link to="/water"><li className="water-li">Water</li></Link>
-        <li className="food-li">Food</li>
+        <Link to="/food"><li className="food-li">Food</li></Link>
         <li className="sleep-li">Sleep</li>
         <li className="exercise-li">Exercise</li>
       </ul>

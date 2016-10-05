@@ -50,8 +50,8 @@ export default React.createClass({
         .attr('class', 'water-bar')
         .attr('width', 500)
         .attr('height', 350)
-      .append('g')
-        .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
+        .append('g')
+          .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
 
     let rect = svg.selectAll('rect')
         .data(this.props.data)
